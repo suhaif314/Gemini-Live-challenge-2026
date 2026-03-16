@@ -1,0 +1,44 @@
+{
+    "name": "live_voice_translator",
+    "description": "Real-time AI Voice Translator enabling multilingual conversations. Converts speech to text, translates using AI, and generates translated speech instantly.",
+    "version": "1.0.0",
+    "defaultInputModes": ["audio/pcm", "text/plain"],
+    "defaultOutputModes": ["audio/mp3", "text/plain"],
+    "skills": [
+        {
+            "id": "speech_to_text",
+            "name": "Speech Recognition",
+            "description": "Convert spoken audio to text in multiple languages",
+            "tags": ["stt", "voice", "transcription"]
+        },
+        {
+            "id": "translate",
+            "name": "Translation",
+            "description": "Translate text between supported languages",
+            "tags": ["translation", "multilingual"]
+        },
+        {
+            "id": "text_to_speech",
+            "name": "Speech Synthesis",
+            "description": "Convert text to natural-sounding speech",
+            "tags": ["tts", "voice", "synthesis"]
+        },
+        {
+            "id": "live_translation",
+            "name": "Live Translation",
+            "description": "Real-time voice-to-voice translation pipeline",
+            "tags": ["live", "realtime", "conversation"]
+        }
+    ],
+    "capabilities": {
+        "streaming": true,
+        "interruption": true,
+        "multimodal": true
+    },
+    "supportedLanguages": [
+        "english", "french", "spanish", "german", 
+        "italian", "portuguese", "japanese", "chinese", 
+        "korean", "hindi"
+    ],
+    "url": "https://YOUR_SERVICE_URL/a2a/live_voice_translator"
+}
