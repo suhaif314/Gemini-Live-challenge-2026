@@ -19,6 +19,13 @@ The flow works **bidirectionally** — Speaker B can respond and Speaker A hears
 
 ---
 
+## 🔗 Judge-Ready Links
+
+- Google Cloud API usage reference code: [google_cloud_services_demo.py](google_cloud_services_demo.py)
+- Visual architecture diagram: [ARCHITECTURE_DIAGRAM.md](ARCHITECTURE_DIAGRAM.md)
+
+---
+
 ## 🏗️ Architecture
 
 ```
