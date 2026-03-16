@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.adk/
+*.db
+.env
+translator_agent/.env
+node_modules/
+.venv/
+*.egg-info/
+dist/
+build/

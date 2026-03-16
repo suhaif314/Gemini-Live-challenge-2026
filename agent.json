@@ -1,44 +1,30 @@
 {
     "name": "live_voice_translator",
-    "description": "Real-time AI Voice Translator enabling multilingual conversations. Converts speech to text, translates using AI, and generates translated speech instantly.",
-    "version": "1.0.0",
-    "defaultInputModes": ["audio/pcm", "text/plain"],
+    "description": "Real-time AI Voice Translator enabling multilingual conversations using STT, Gemini LLM, and TTS.",
+    "version": "3.0.0",
+    "defaultInputModes": ["audio/webm", "text/plain"],
     "defaultOutputModes": ["audio/mp3", "text/plain"],
     "skills": [
         {
-            "id": "speech_to_text",
-            "name": "Speech Recognition",
-            "description": "Convert spoken audio to text in multiple languages",
-            "tags": ["stt", "voice", "transcription"]
+            "id": "voice_translate",
+            "name": "Voice Translation",
+            "description": "Translate spoken audio between languages in real-time",
+            "tags": ["translation", "voice", "realtime", "multilingual"]
         },
         {
-            "id": "translate",
-            "name": "Translation",
-            "description": "Translate text between supported languages",
-            "tags": ["translation", "multilingual"]
-        },
-        {
-            "id": "text_to_speech",
-            "name": "Speech Synthesis",
-            "description": "Convert text to natural-sounding speech",
-            "tags": ["tts", "voice", "synthesis"]
-        },
-        {
-            "id": "live_translation",
-            "name": "Live Translation",
-            "description": "Real-time voice-to-voice translation pipeline",
-            "tags": ["live", "realtime", "conversation"]
+            "id": "text_translate",
+            "name": "Text Translation",
+            "description": "Translate text between supported languages with TTS output",
+            "tags": ["translation", "text", "tts"]
         }
     ],
     "capabilities": {
-        "streaming": true,
-        "interruption": true,
-        "multimodal": true
+        "multimodal": true,
+        "audio_input": true,
+        "audio_output": true
     },
     "supportedLanguages": [
-        "english", "french", "spanish", "german", 
-        "italian", "portuguese", "japanese", "chinese", 
-        "korean", "hindi"
-    ],
-    "url": "https://YOUR_SERVICE_URL/a2a/live_voice_translator"
+        "english", "french", "spanish", "german", "italian",
+        "portuguese", "japanese", "chinese", "korean", "hindi"
+    ]
 }
