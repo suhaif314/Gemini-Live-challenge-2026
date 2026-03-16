@@ -4,6 +4,8 @@
 
 > Built for the [Gemini Live Agent Challenge 2026](https://geminiliveagentchallenge.devpost.com/)
 
+> This branch contains the final version of the project and the latest submission-ready files.
+
 ---
 
 ## 🎯 What It Does
