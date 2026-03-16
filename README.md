@@ -325,11 +325,6 @@ This agent enables natural voice conversations between speakers of different lan
 - Google ADK agent orchestration
 - Hosted on Google Cloud
 
----
-
-## 📄 License
-
-MIT License
 
 ---
 
