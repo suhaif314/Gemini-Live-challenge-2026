@@ -145,8 +145,7 @@ gcloud run deploy live-voice-translator \
 ### Option A: Test the Live Deployed Version (Fastest)
 
 1. Open the deployed app URL:
-   **https://voice-translator-XXXXX-uc.a.run.app**
-   *(Replace with your actual Cloud Run URL)*
+   **https://voice-translator-358738007304.us-central1.run.app**
 
 2. The app loads instantly in any modern browser — no login or setup needed.
 
