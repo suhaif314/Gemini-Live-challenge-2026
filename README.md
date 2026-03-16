@@ -96,6 +96,98 @@ python3 app.py
 # Open http://localhost:8080
 ```
 
+## Reproducible Testing
+
+Judges can verify the project in a few minutes using either text mode or microphone mode.
+
+### Test Environment Setup
+
+1. Create a Google Cloud project and enable these APIs:
+  - Vertex AI API
+  - Cloud Speech-to-Text API
+  - Cloud Text-to-Speech API
+  - Cloud Translate API
+2. Authenticate locally with Google Cloud:
+
+```bash
+gcloud auth application-default login
+gcloud config set project YOUR_PROJECT_ID
+```
+
+3. Install project dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start the app:
+
+```bash
+python3 app.py
+```
+
+5. Open http://localhost:8080 in a browser.
+
+### Test Case 1: Text Translation
+
+This is the fastest way to validate the pipeline without microphone permissions.
+
+1. Open the app.
+2. Set Speaker A to `English` and Speaker B to `French`.
+3. Keep the engine on `Gemini LLM`.
+4. Enter: `Hello, thank you for joining the meeting today.`
+5. Submit the text translation request.
+
+Expected result:
+- The original English text is shown in the conversation log.
+- A French translation is returned.
+- Audio playback is generated for the translated output.
+- Timing metrics are displayed for the request.
+
+### Test Case 2: Voice Translation
+
+1. Allow microphone access in the browser.
+2. Set Speaker A to `English` and Speaker B to `French`.
+3. Hold the Speaker A record button.
+4. Say: `Can we review the project timeline tomorrow morning?`
+5. Release the button and wait for processing.
+
+Expected result:
+- The app captures audio and sends it through the STT -> Translate -> TTS pipeline.
+- The recognized transcript appears in English.
+- The French translation is displayed.
+- Translated audio plays automatically for Speaker B.
+
+### Test Case 3: Bidirectional Conversation
+
+1. After completing Test Case 2, switch to Speaker B.
+2. Hold the Speaker B button.
+3. Speak a short reply in French.
+4. Release the button.
+
+Expected result:
+- The reply is transcribed in French.
+- The app translates it back to English.
+- Speaker A receives English audio playback.
+- Both turns appear in the conversation history.
+
+### Test Case 4: Fallback Engine Check
+
+1. Change the translation engine from `Gemini LLM` to `Cloud API`.
+2. Repeat either the text test or the voice test.
+
+Expected result:
+- Translation still succeeds.
+- Audio is still generated.
+- The app remains usable even when switching away from the LLM-driven path.
+
+### Notes for Judges
+
+- If microphone permissions are blocked, use `Text Mode` to verify the core translation and TTS flow.
+- If speech recognition returns no result, record a slightly longer sentence and speak clearly.
+- For the smoothest demo, use Chrome or Edge.
+- Typical end-to-end latency is about `1-3 seconds` depending on network and API response time.
+
 ### Deploy to Cloud Run
 
 ```bash
